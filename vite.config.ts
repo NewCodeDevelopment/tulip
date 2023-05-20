@@ -10,6 +10,7 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
+      skipDiagnostics: false,
       insertTypesEntry: true,
     }),
   ],
@@ -34,9 +35,16 @@ export default defineConfig({
       external: [...Object.keys(peerDependencies), ...Object.keys(dependencies)],
       output: {
         globals: {
-          next: "Next",
           react: "React",
           "react-dom": "ReactDOM",
+          "tailwind-merge": "tailwindMerge",
+          "react-day-picker": "reactDayPicker",
+          "@radix-ui/react-accordion": "AccordionPrimitive",
+          "@radix-ui/react-alert-dialog": "AlertDialogPrimitive",
+          "@radix-ui/react-slot": "reactSlot",
+          "@radix-ui/react-aspect-ratio": "AspectRatioPrimitive",
+          "@radix-ui/react-avatar": "AvatarPrimitive",
+          "@radix-ui/react-checkbox": "reactCheckbox",
         },
       },
     },

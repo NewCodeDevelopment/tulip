@@ -1,1 +1,1 @@
-export * from "./calendar";
+export { Calendar } from "./calendar";

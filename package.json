@@ -17,13 +17,13 @@
       "import": "./dist/@newcodedevelopment/tulip.es.js",
       "require": "./dist/@newcodedevelopment/tulip.umd.js"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./styles/style.css": "./dist/style.css"
   },
   "engines": {
     "node": ">=16.18.1"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "yarn storybook",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -47,6 +47,8 @@
     "tailwind-merge": "^1.12.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-typescript": "^7.21.5",
     "@storybook/addon-a11y": "^7.0.12",
     "@storybook/addon-essentials": "^7.0.12",
     "@storybook/addon-interactions": "^7.0.12",
@@ -91,7 +93,8 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2",
     "vite": "^4.3.2",
-    "vite-plugin-dts": "^2.3.0"
+    "vite-plugin-dts": "^2.3.0",
+    "webpack": "^5.83.1"
   },
   "peerDependencies": {
     "next": "13.4.3",

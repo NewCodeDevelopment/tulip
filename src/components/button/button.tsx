@@ -1,9 +1,26 @@
-import { Slot } from "@radix-ui/react-slot";
-import { VariantProps, cva } from "class-variance-authority";
+import { CustomVariant } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
 import { ButtonHTMLAttributes, forwardRef } from "react";
 
-const buttonVariants = cva(
+type ButtonVariants = {
+  variant: {
+    default: string;
+    destructive: string;
+    outline: string;
+    secondary: string;
+    ghost: string;
+    link: string;
+  };
+  size: {
+    default: string;
+    sm: string;
+    lg: string;
+  };
+};
+
+const buttonVariants: CustomVariant<ButtonVariants> = cva(
   "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
   {
     variants: {
@@ -25,7 +42,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  },
+  }
 );
 
 export interface ButtonProps
@@ -40,32 +57,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
     );
-  },
+  }
 );
 
 Button.displayName = "Button";
 
 export { Button, buttonVariants };
-
-// import { HTMLAttributes } from "react";
-// import { twMerge } from "tailwind-merge";
-
-// export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
-//   variant?: "primary" | "secondary";
-// };
-
-// export default function Button({ children, variant, className, ...props }: ButtonProps) {
-//   return (
-//     <button
-//       {...props}
-//       className={twMerge(
-//         "px-4 py-2 rounded-xl",
-//         variant === "primary" && "bg-blue-500 text-neutral-100 hover:bg-blue-600",
-//         variant === "secondary" && "bg-neutral-100 text-blue-500 hover:bg-neutral-200",
-//         className,
-//       )}
-//     >
-//       {children}
-//     </button>
-//   );
-// }
