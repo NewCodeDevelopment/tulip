@@ -1,6 +1,5 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-
 import { Checkbox } from "./checkbox";
 
 describe("Running Test for Checkbox", () => {
