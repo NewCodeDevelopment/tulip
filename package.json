@@ -30,7 +30,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,css,mdx}\""
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.1",

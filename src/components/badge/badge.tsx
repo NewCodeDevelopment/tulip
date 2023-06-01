@@ -28,7 +28,7 @@ const badgeVariants: CustomVariant<BadgeVariants> = cva(
     defaultVariants: {
       variant: "default",
     },
-  }
+  },
 );
 
 type BadgeProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof badgeVariants> & {};

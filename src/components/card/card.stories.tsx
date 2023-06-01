@@ -27,7 +27,5 @@ export const Default: Story = {
       </CardFooter>
     </Card>
   ),
-  args: {
-    
-  },
+  args: {},
 };

@@ -30,7 +30,7 @@ const AccordionTrigger = forwardRef<
       data-testid="accordion-trigger"
       className={cn(
         "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
-        className
+        className,
       )}
       {...props}
     >
@@ -50,7 +50,7 @@ const AccordionContent = forwardRef<
     data-testid="accordion-content"
     className={cn(
       "overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
-      className
+      className,
     )}
     {...props}
   >

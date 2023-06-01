@@ -10,5 +10,5 @@ type ConfigVariants<T extends ConfigSchema> = {
 };
 
 export type CustomVariant<T extends ConfigSchema> = (
-  props?: (ConfigVariants<T> & ClassProp) | undefined
+  props?: (ConfigVariants<T> & ClassProp) | undefined,
 ) => string;
